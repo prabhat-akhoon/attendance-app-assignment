@@ -1,0 +1,48 @@
+name: attendance_app
+description: "Selfie-based face recognition attendance app for Admin and Staff."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # State management
+  provider: ^6.1.5
+
+  # Local persistence
+  sqflite: ^2.4.4
+  path: ^1.9.1
+  path_provider: ^2.1.6
+
+  # Camera + face detection + on-device face matching
+  camera: ^0.12.1
+  google_mlkit_face_detection: ^0.15.1
+  tflite_flutter: ^0.12.1
+  image: ^4.10.1
+
+  # Location for attendance capture — geolocator handles its own runtime
+  # permission prompts, so no separate permission_handler dependency is
+  # needed (camera's CameraController does the same for camera access).
+  geolocator: ^14.0.3
+  geocoding: ^5.0.0
+
+  # Utilities
+  uuid: ^4.6.0
+  intl: ^0.20.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/ml/mobilefacenet.tflite
